@@ -1,6 +1,6 @@
 {
   "name": "@fuzzysaj/nat-earth-geojson-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "prepare": "tsc",
     "pretest": "tsc -p .",
@@ -23,6 +23,7 @@
   },
   "license": "GPL-3.0",
   "repository": "fuzzysaj/nat-earth-geojson-cache",
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "fuzzysaj",
@@ -35,7 +36,7 @@
     "@types/chai": "^4.2.11",
     "@types/debug": "^4.1.5",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^13.9.5",
+    "@types/node": "^13.9.8",
     "chai": "^4.2.0",
     "codecov": "^3.6.5",
     "mocha": "^7.1.1",

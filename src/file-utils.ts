@@ -1,3 +1,4 @@
+import * as zlib from 'zlib';
 import * as fs from 'fs';
 import { promisify } from 'util';
 
@@ -42,3 +43,14 @@ export async function msSinceLastUpdate(thePath: string): Promise<number> {
   return Infinity;
 }
 
+export const gzToJson = async filePath => {
+  const fileStream = fs.createReadStream(filePath);
+  const gunzip = zlib.createGunzip();
+  async function* chunksToJson(iterable) {
+      let buf = '';
+      for await (const chunk of iterable) buf += chunk;
+      yield JSON.parse(buf);
+  }
+  const { value } = await chunksToJson(fileStream.pipe(gunzip)).next();
+  return value;
+}
