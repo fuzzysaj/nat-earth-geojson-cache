@@ -1,6 +1,6 @@
 {
   "name": "@fuzzysaj/nat-earth-geojson-cache",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "prepare": "tsc",
     "pretest": "tsc -p .",
